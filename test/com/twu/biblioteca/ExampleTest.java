@@ -10,4 +10,10 @@ public class ExampleTest {
     public void test() {
         assertEquals(1, 1);
     }
+
+    @Test
+    public void testMessage() {
+        String message = new Library().message;
+        assertEquals(message, "Welcome to Biblioteca");
+    }
 }
