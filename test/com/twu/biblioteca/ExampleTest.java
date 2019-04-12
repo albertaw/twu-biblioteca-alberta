@@ -14,6 +14,6 @@ public class ExampleTest {
     @Test
     public void testMessage() {
         String message = new Library().message;
-        assertEquals(message, "Welcome to Biblioteca");
+        assertEquals(message, "Welcome to Biblioteca. Your one-stop shop for great book titles in Bangalore!");
     }
 }
