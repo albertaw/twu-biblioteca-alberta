@@ -1,15 +1,27 @@
 package com.twu.biblioteca;
 
+import java.util.HashMap;
+
 public class Library {
-    public Book books[] = {
-            new Book("Title 1", "Author 1", "Year 1"),
-            new Book("Title 2", "Author 2", "Year 2"),
-            new Book("Title 3", "Author 3", "Year 3")
-    };
+    private HashMap<String, Book> books = new HashMap<String, Book>();
+
+    public HashMap<String, Book> getBooks() {
+        return books;
+    }
 
     public void printBooks() {
-        for (Book book: books) {
-            System.out.printf("%-35s %-25s %35s \n", book.getTitle(), book.getAuthor(), book.getYear());
+        //print books that are checkedin
+        for (String isbn : books.keySet()) {
+            if (books.get(isbn).getCheckedIn() == true) {
+                System.out.printf("%-10s %-10s %-10s %10s \n", isbn, books.get(isbn).getTitle(), books.get(isbn).getAuthor(), books.get(isbn).getYear());
+            }
         }
+    }
+
+    public void checkout(String isbn) {
+        Book book = books.get(isbn);
+        book.setCheckedIn(false);
+        books.put(isbn, book);
+        
     }
 }
