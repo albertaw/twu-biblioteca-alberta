@@ -12,6 +12,13 @@ import static org.junit.Assert.assertEquals;
 
 public class MenuTest {
     @Test
+    public void testMessage() {
+        String message = new Menu().getMessage();
+
+        assertEquals(message, "Welcome to Biblioteca. Your one-stop shop for great book titles in Bangalore!");
+    }
+
+    @Test
     public void testGetMenuOptions() {
         Menu menu = new Menu();
         ArrayList<String> options = menu.getOptions();

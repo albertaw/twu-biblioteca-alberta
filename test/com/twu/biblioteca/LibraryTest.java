@@ -6,19 +6,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertArrayEquals;
 
 public class LibraryTest {
-
-    @Test
-    public void test() {
-        assertEquals(1, 1);
-    }
-
-    @Test
-    public void testMessage() {
-        String message = new Library().message;
-
-        assertEquals(message, "Welcome to Biblioteca. Your one-stop shop for great book titles in Bangalore!");
-    }
-
     @Test
     public void testBooksShouldListBooks() {
         Book libraryBooks[] = new Library().books;
