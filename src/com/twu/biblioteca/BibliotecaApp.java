@@ -9,7 +9,7 @@ public class BibliotecaApp {
        System.out.println(library.message);
        Menu menu = new Menu();
        menu.printOptions();
-       int option = menu.getInput();
+       String option = menu.getInput();
        menu.selectOption(option);
     }
 }

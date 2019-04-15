@@ -18,20 +18,18 @@ public class Menu {
         }
     }
 
-    public int getInput() {
+    public String getInput() {
         System.out.println("Enter a number");
         Scanner sc = new Scanner(System.in);
-        return Integer.parseInt(sc.nextLine());
+        return sc.nextLine();
     }
 
-    public boolean validateOption(String input) {
-        return true;
-    }
+    public void selectOption(String option) {
 
-    public void selectOption(int option) {
-
-        switch (option) {
-            case 0: library.printBooks();
+        if (option == "0") {
+            library.printBooks();
+        } else {
+            System.out.println("Please select a valid option!");
         }
     }
 
