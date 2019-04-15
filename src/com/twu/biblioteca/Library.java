@@ -19,12 +19,21 @@ public class Library {
     }
 
     public void checkout(String isbn) {
-        Book book = books.get(isbn);
-        boolean checkedIn = book.getCheckedIn();
-        if (checkedIn == true) {
-            book.setCheckedIn(false);
-            books.put(isbn, book);
-            System.out.println("Thank you! Enjoy the book\n");
+        boolean bookIsPresent = books.containsKey(isbn);
+
+        if (bookIsPresent) {
+            Book book = books.get(isbn);
+            boolean checkedIn = book.getCheckedIn();
+            if (checkedIn == true) {
+                book.setCheckedIn(false);
+                books.put(isbn, book);
+                System.out.println("Thank you! Enjoy the book\n");
+            } else {
+                System.out.println("Sorry, that book is not available");
+            }
+        } else {
+            System.out.println("Sorry, that book is not available");
         }
+
     }
 }
