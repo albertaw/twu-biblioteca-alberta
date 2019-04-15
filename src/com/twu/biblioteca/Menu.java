@@ -35,13 +35,9 @@ public class Menu {
         if (option.equals("0")) {
             library.printBooks();
         } else if (option.equals("1")) {
-            //ask for book name
             System.out.println("Enter a book isbn");
             String isbn = getInput();
-            //mark book checked out
-            Book book = library.getBooks().get(isbn);
-            book.setCheckedIn(false);
-            library.getBooks().put(isbn, book);
+            library.checkout(isbn);
         } else if (option.equals("2")) {
             System.out.println("Goodby");
             running = false;

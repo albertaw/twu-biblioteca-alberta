@@ -20,8 +20,11 @@ public class Library {
 
     public void checkout(String isbn) {
         Book book = books.get(isbn);
-        book.setCheckedIn(false);
-        books.put(isbn, book);
-        
+        boolean checkedIn = book.getCheckedIn();
+        if (checkedIn == true) {
+            book.setCheckedIn(false);
+            books.put(isbn, book);
+            System.out.println("Thank you! Enjoy the book\n");
+        }
     }
 }
