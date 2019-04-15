@@ -24,6 +24,10 @@ public class Menu {
         return Integer.parseInt(sc.nextLine());
     }
 
+    public boolean validateOption(String input) {
+        return true;
+    }
+
     public void selectOption(int option) {
 
         switch (option) {

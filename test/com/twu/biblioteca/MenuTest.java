@@ -20,4 +20,15 @@ public class MenuTest {
         assertThat(expectedOptions, equalTo(options));
     }
 
+    @Test
+    public void testSelectInvalidMenuOption() {
+        //arrange
+        String input = "x";
+        Menu menu = new Menu();
+        //act
+        boolean result = menu.validateOption(input);
+        //assert
+        assertThat(result, equalTo(true));
+    }
+
 }
